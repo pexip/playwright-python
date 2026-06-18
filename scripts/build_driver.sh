@@ -42,7 +42,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DRIVER_DIR="$REPO_ROOT/driver"
 SOURCE_DIR="$DRIVER_DIR/playwright-src"
-PLAYWRIGHT_REPO="https://github.com/microsoft/playwright"
+PLAYWRIGHT_REPO="https://github.com/pexip/playwright"
 
 # The driver pin: an immutable commit in microsoft/playwright.
 # microsoft/playwright @ main
