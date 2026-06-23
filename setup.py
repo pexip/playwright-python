@@ -210,5 +210,5 @@ class PlaywrightBDistWheelCommand(BDistWheelCommand):
 
 
 setup(
-    cmdclass={"bdist_wheel": PlaywrightBDistWheelCommand},
+    # cmdclass={"bdist_wheel": PlaywrightBDistWheelCommand},
 )
