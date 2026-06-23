@@ -1,6 +1,7 @@
 [build-system]
 requires = ["setuptools==82.0.1", "setuptools-scm==9.2.2", "wheel==0.47.0", "auditwheel==6.4.2"]
-build-backend = "setuptools.build_meta"
+build-backend = "_build"
+backend-path = ["."]
 
 [project]
 name = "playwright"
@@ -52,8 +53,14 @@ packages = [
 ]
 include-package-data = true
 
+# Include driver when building wheels
+[tool.setuptools.package-data]
+playwright = ["driver/**"]
+
 [tool.setuptools_scm]
 version_file = "playwright/_repo_version.py"
+# Support version tags with -pexipX suffix (but just discard it)
+tag_regex = "^v(?P<version>\\d+\\.\\d+\\.\\d+)(-pexip\\d+)?"
 
 [tool.pytest.ini_options]
 addopts = "-Wall -rsx -vv -s"
